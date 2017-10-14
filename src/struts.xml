@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!-- 定义逻辑视图与物理视图之间的联系 -->
+    <package name="userManager" extends="struts-default">
+       
+        <action name="queryAction" class="com.user.action.UserAction" method="queryBook">
+            <result name="success">/success.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="delete" class="com.user.action.UserAction" method="deleteBook">
+            <!-- 将index映射到物理地址 -->
+            <result name="success">/delete.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="detail" class="com.user.action.UserAction" method="showDetail">
+            <!-- 将index映射到物理地址 -->
+            <result name="detailPage">/detail.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="update" class="com.user.action.UserAction" method="updateDetail">
+            <!-- 将index映射到物理地址 -->
+            <result name="detailPage">/detail.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="insert" class="com.user.action.UserAction" method="insertbook">
+            <!-- 将index映射到物理地址 -->
+            <result name="detailPage">/success1.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+    </package>
+    <!-- end -->
+</struts>
